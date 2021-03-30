@@ -97,16 +97,16 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  if( isWhite(IR_SENSOR_1) && isWhite(IR_SENSOR_2) && isWhite(IR_SENSOR_3) && isWhite(IR_SENSOR_4) && isBlack(IR_SENSOR_5) ) error = 4;
-  else if( isWhite(IR_SENSOR_1) && isWhite(IR_SENSOR_2) && isWhite(IR_SENSOR_3) && isBlack(IR_SENSOR_4) && isBlack(IR_SENSOR_5) ) error = 3;
-  else if( isWhite(IR_SENSOR_1) && isWhite(IR_SENSOR_2) && isWhite(IR_SENSOR_3) && isBlack(IR_SENSOR_4) && isWhite(IR_SENSOR_5) ) error = 2;
-  else if( isWhite(IR_SENSOR_1) && isWhite(IR_SENSOR_2) && isBlack(IR_SENSOR_3) && isBlack(IR_SENSOR_4) && isWhite(IR_SENSOR_5) ) error = 1;
-  else if( isWhite(IR_SENSOR_1) && isWhite(IR_SENSOR_2) && isBlack(IR_SENSOR_3) && isWhite(IR_SENSOR_4) && isWhite(IR_SENSOR_5) ) error = 0;
-  else if( isWhite(IR_SENSOR_1) && isBlack(IR_SENSOR_2) && isBlack(IR_SENSOR_3) && isWhite(IR_SENSOR_4) && isWhite(IR_SENSOR_5) ) error = -1;
-  else if( isWhite(IR_SENSOR_1) && isBlack(IR_SENSOR_2) && isWhite(IR_SENSOR_3) && isWhite(IR_SENSOR_4) && isWhite(IR_SENSOR_5) ) error = -2;
-  else if( isBlack(IR_SENSOR_1) && isBlack(IR_SENSOR_2) && isWhite(IR_SENSOR_3) && isWhite(IR_SENSOR_4) && isWhite(IR_SENSOR_5) ) error = -3;
-  else if( isBlack(IR_SENSOR_1) && isWhite(IR_SENSOR_2) && isWhite(IR_SENSOR_3) && isWhite(IR_SENSOR_4) && isWhite(IR_SENSOR_5) ) error = -4;
-  else if( isWhite(IR_SENSOR_1) && isWhite(IR_SENSOR_2) && isWhite(IR_SENSOR_3) && isWhite(IR_SENSOR_4) && isWhite(IR_SENSOR_5) ) error = pre_error;
+  if( isWhite(analogRead(IR_SENSOR_1)) && isWhite(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) && isWhite(analogRead(IR_SENSOR_4)) && isBlack(analogRead(IR_SENSOR_5)) ) error = 4;
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isWhite(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) && isBlack(analogRead(IR_SENSOR_4)) && isBlack(analogRead(IR_SENSOR_5)) ) error = 3;
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isWhite(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) && isBlack(analogRead(IR_SENSOR_4)) && isWhite(analogRead(IR_SENSOR_5)) ) error = 2;
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isWhite(analogRead(IR_SENSOR_2)) && isBlack(analogRead(IR_SENSOR_3)) && isBlack(analogRead(IR_SENSOR_4)) && isWhite(analogRead(IR_SENSOR_5)) ) error = 1;
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isWhite(analogRead(IR_SENSOR_2)) && isBlack(analogRead(IR_SENSOR_3)) && isWhite(analogRead(IR_SENSOR_4)) && isWhite(analogRead(IR_SENSOR_5)) ) error = 0;
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isBlack(analogRead(IR_SENSOR_2)) && isBlack(analogRead(IR_SENSOR_3)) && isWhite(analogRead(IR_SENSOR_4)) && isWhite(analogRead(IR_SENSOR_5)) ) error = -1;
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isBlack(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) && isWhite(analogRead(IR_SENSOR_4)) && isWhite(analogRead(IR_SENSOR_5)) ) error = -2;
+  else if( isBlack(analogRead(IR_SENSOR_1)) && isBlack(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) && isWhite(analogRead(IR_SENSOR_4)) && isWhite(analogRead(IR_SENSOR_5)) ) error = -3;
+  else if( isBlack(analogRead(IR_SENSOR_1)) && isWhite(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) && isWhite(analogRead(IR_SENSOR_4)) && isWhite(analogRead(IR_SENSOR_5)) ) error = -4;
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isWhite(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) && isWhite(analogRead(IR_SENSOR_4)) && isWhite(analogRead(IR_SENSOR_5)) ) error = pre_error;
 
   motor_speed = Kp * error + Kd * (error - pre_error) + Ki * (sum_error);
   left_speed = BASE_SPEED + motor_speed;
