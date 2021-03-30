@@ -85,32 +85,32 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  if( isBlack(IR_SENSOR_1) && isWhite(IR_SENSOR_2) && isWhite(IR_SENSOR_3) )
+  if( isBlack(analogRead(IR_SENSOR_1)) && isWhite(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) )
   {
     left_speed = 0;
     right_speed = 64;
   }
-  else if( isBlack(IR_SENSOR_1) && isBlack(IR_SENSOR_2) && isWhite(IR_SENSOR_3) )
+  else if( isBlack(analogRead(IR_SENSOR_1)) && isBlack(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) )
   {
     left_speed = 0;
     right_speed = 64;
   }
-  else if( isWhite(IR_SENSOR_1) && isBlack(IR_SENSOR_2) && isWhite(IR_SENSOR_3) )
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isBlack(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) )
   {
     left_speed = 64;
     right_speed = 64;
   }
-  else if( isWhite(IR_SENSOR_1) && isBlack(IR_SENSOR_2) && isBlack(IR_SENSOR_3) )
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isBlack(analogRead(IR_SENSOR_2)) && isBlack(analogRead(IR_SENSOR_3)) )
   {
     left_speed = 64;
     right_speed = 0;
   }
-  else if( isWhite(IR_SENSOR_1) && isWhite(IR_SENSOR_2) && isBlack(IR_SENSOR_3) )
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isWhite(analogRead(IR_SENSOR_2)) && isBlack(analogRead(IR_SENSOR_3)) )
   {
     left_speed = 64;
     right_speed = 0;
   }
-  else if( isWhite(IR_SENSOR_1) && isWhite(IR_SENSOR_2) && isWhite(IR_SENSOR_3) )
+  else if( isWhite(analogRead(IR_SENSOR_1)) && isWhite(analogRead(IR_SENSOR_2)) && isWhite(analogRead(IR_SENSOR_3)) )
   {
     left_speed = 0;
     right_speed = 0;
